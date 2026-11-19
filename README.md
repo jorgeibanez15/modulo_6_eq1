@@ -6,10 +6,10 @@
 
 | Campo | Valor |
 |---|---|
-| Código de grupo | `G?` ← **llenar** |
-| Track | `<<A o B>>` ← **llenar** |
+| Código de grupo | `G_1?`|
+| Track | `<<B>>` |
 | Sujeto(s) | `S01` (y `S02` si aplica) |
-| Músculo / sitio | `<<sitio>>` ← **llenar** (p. ej. flexor de muñeca, antebrazo derecho) |
+| Músculo / sitio | `<<flexor de muñeca>>` ← **llenar** (p. ej. flexor de muñeca, antebrazo derecho) |
 | Sensor EMG | `<<sensor>>` ← **llenar**. **La salida ya viene rectificada/envolvente** |
 | Placa | Arduino UNO R4 WiFi (principal) · ESP32 (alternativa) |
 | ADC | 14 bits, Vref 5.0 V, ganancia `not stated` |
