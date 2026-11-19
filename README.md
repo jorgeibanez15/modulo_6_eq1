@@ -10,7 +10,7 @@
 | Track | `<<A o B>>` ← **llenar** |
 | Sujeto(s) | `S01` (y `S02` si aplica) |
 | Músculo / sitio | `<<sitio>>` ← **llenar** (p. ej. flexor de muñeca, antebrazo derecho) |
-| Sensor EMG | `<<sensor>>` ← **llenar**. **La salida ya viene rectificada/envolvente** |
+| Sensor EMG | Circuito analógico propio: electrodos → amplificador → **filtro Butterworth** (`<<pasa-banda / pasa-bajas>>`, `<<orden>>`, `<<fc>>` Hz) → **rectificador** (`<<onda completa / media onda>>`) → A0. **La señal que llega a A0 ya viene filtrada y rectificada; no es EMG crudo** |
 | Placa | Arduino UNO R4 WiFi (principal) · ESP32 (alternativa) |
 | ADC | 14 bits, Vref 5.0 V, ganancia `not stated` |
 
@@ -52,8 +52,8 @@ La llave de Azure va en la variable de entorno `AZURE_STORAGE_CONNECTION_STRING`
 
 ## Avisos honestos sobre la señal
 
-- **El sensor ya rectifica y suaviza la señal.** Lo que leemos en A0 no es el EMG crudo bipolar, sino su envolvente. Por eso el `offset_v` de la metadata es el nivel del sensor en reposo (≈ 0 V) y no la mitad de Vref.
-- **MNF y MDF** (features de frecuencia) se calculan sobre esa envolvente, así que **no representan el espectro real del EMG** (20–450 Hz). Solo las usamos si de verdad separan las clases, y lo reportamos tal cual.
+- **El circuito analógico filtra (Butterworth) y rectifica la señal antes del ADC.** Lo que leemos en A0 no es el EMG crudo bipolar, sino el EMG rectificado (solo valores positivos). Por eso el `offset_v` de la metadata es el nivel del circuito en reposo (≈ 0 V) y no la mitad de Vref.
+- **MNF y MDF** (features de frecuencia) se calculan sobre la señal rectificada. Rectificar agrega un nivel de DC y armónicos (en onda completa, las frecuencias se duplican), así que **no representan el espectro real del EMG** (20–450 Hz). Solo las usamos si de verdad separan las clases, y lo reportamos tal cual.
 - Las ventanas deslizantes del firmware (RMS de 200 ms, MAV de 400 muestras y filtro de 6 Hz) arrastran valores de la fase anterior al inicio de cada fase. Ver `docs/DELIVERY2.md`.
 
 ## Resultados
