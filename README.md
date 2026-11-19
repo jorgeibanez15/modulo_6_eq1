@@ -6,7 +6,7 @@
 
 | Campo | Valor |
 |---|---|
-| Código de grupo | `G_1?`|
+| Código de grupo | `G1`|
 | Track | `<<B>>` |
 | Sujeto(s) | `S01` (y `S02` si aplica) |
 | Músculo / sitio | flexor de muñeca |
