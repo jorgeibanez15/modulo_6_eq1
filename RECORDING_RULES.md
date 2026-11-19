@@ -4,7 +4,7 @@ Seguir **siempre** el mismo procedimiento para que todas las sesiones sean compa
 
 ## 1. Sitio de electrodos
 
-- Músculo: `<<sitio>>` (p. ej. flexor de muñeca, antebrazo derecho).
+- Músculo: `flexor de muñeca`.
 - Electrodos de medición sobre el vientre del músculo, alineados con las fibras. Electrodo de referencia sobre hueso (p. ej. codo).
 - Marca la posición con plumón la primera vez, para repetirla en sesiones nuevas.
 
@@ -19,7 +19,7 @@ Seguir **siempre** el mismo procedimiento para que todas las sesiones sean compa
 - Sujeto sentado, brazo apoyado y relajado.
 - Orden fijo: **reposo primero, luego movimiento**, alternando: 5 s reposo → 5 s contracción → …
 - La LCD indica `RELAJA` / `CONTRAE!!` y la cuenta regresiva.
-- Contracción: `<<movimiento, p. ej. cerrar el puño con fuerza moderada constante>>`.
+- Contracción: `<<cerrar el puño con fuerza moderada constante>>`.
 - Mínimo **10 de reposo + 10 de movimiento** por sesión de grabación cruda.
 
 ## 4. Sesión nueva (prueba)
