@@ -6,10 +6,10 @@
 
 | Campo | Valor |
 |---|---|
-| Código de grupo | `G?` ← **llenar** |
-| Track | `<<A o B>>` ← **llenar** |
+| Código de grupo | `G_1?`|
+| Track | `<<B>>` |
 | Sujeto(s) | `S01` (y `S02` si aplica) |
-| Músculo / sitio | `<<sitio>>` ← **llenar** (p. ej. flexor de muñeca, antebrazo derecho) |
+| Músculo / sitio | flexor de muñeca |
 | Sensor EMG | Circuito analógico propio: electrodos → amplificador → **filtro Butterworth** (`<<pasa-banda / pasa-bajas>>`, `<<orden>>`, `<<fc>>` Hz) → **rectificador** (`<<onda completa / media onda>>`) → A0. **La señal que llega a A0 ya viene filtrada y rectificada; no es EMG crudo** |
 | Placa | Arduino UNO R4 WiFi (principal) · ESP32 (alternativa) |
 | ADC | 14 bits, Vref 5.0 V, ganancia `not stated` |
@@ -17,7 +17,7 @@
 ## Cadena del proyecto
 
 ```
-señal (sensor, ya rectificada)
+señal (circuito: amplificador → Butterworth → rectificador)
   → grabación (firmware UNO R4 → USB → src/logger.py → data/raw/*.csv + data/metadata.csv)
   → checks (src/checks.py: nivel cero, sin clipping, longitud)
   → features (src/features.py: MAV, RMS, MNF, MDF → data/features/EMG_dataset_ML.xlsx)
