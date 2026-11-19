@@ -1,0 +1,9 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+pyserial
+joblib
+openpyxl
+azure-storage-blob
